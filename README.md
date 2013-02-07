@@ -3,7 +3,7 @@
   Converts pre-defined tags found in Wygwam content. This allows users to place a image-gallery / image-slider / youtube-video wherever they want throughout the text.
   Its easily customizable by using the tag parameters.
   
-    {exp:bol_wygwam_tags slider_container_id="myID" slider_ul_class="myClass"}
+    {exp:bol_wygwam_tags entry_id="{entry_id}" slider_container_id="myID" slider_ul_class="myClass"}
         {content}
     {/exp:bol_wygwam_tags}
   
@@ -27,38 +27,41 @@
 
 ## Template tag Parameters
 
-### image_size="medium"
+### entry_id=""
+Is needed to retrieve the Channel Images
+
+### [optional] image_size="medium"
 Set the image size (as defined in the Channel Images fieldtype)
 
-### slider_container_id=""
+### [optional] slider_container_id=""
 
 Set the ID of the slider container.
 
-### slider_container_class=""
+### [optional] slider_container_class=""
 
 Set the CSS class of the slider container.
 
-### slider_ul_id=""
+### [optional] slider_ul_id=""
 
 Set the ID of the slider unordered-list.
 
-### slider_ul_class=""
+### [optional] slider_ul_class=""
 
 Set the CSS class of the slider unordered-list.
 
-### gallery_container_id=""
+### [optional] gallery_container_id=""
 
 Set the ID of the gallery container.
 
-### gallery_container_class=""
+### [optional] gallery_container_class=""
 
 Set the CSS class of the gallery container.
 
-### gallery_ul_id=""
+### [optional] gallery_ul_id=""
 
 Set the ID of the gallery unordered-list.
 
-### gallery_ul_class=""
+### [optional] gallery_ul_class=""
 
 Set the CSS class of the slider unordered-list.
 
@@ -81,7 +84,7 @@ Set the CSS class of the slider unordered-list.
 ## Example using [Flex Slider](http://www.woothemes.com/flexslider)
 
 ### Template Tag
-    {exp:bol_wygwam_tags slider_container_class="flexslider" slider_ul_class="slides"}
+    {exp:bol_wygwam_tags entry_id="{entry_id}" slider_container_class="flexslider" slider_ul_class="slides"}
         {content}
     {/exp:bol_wygwam_tags}
 

@@ -25,6 +25,7 @@ class Bol_wygwam_media
 	private $data;
 	private $entry_id;
 	private $channel_id;
+	private $image_size;
 
 	function Bol_wygwam_media()
 	{
@@ -34,6 +35,8 @@ class Bol_wygwam_media
 		$this->data = $TMPL->tagdata;
 		$this->entry_id = ($TMPL->fetch_param('entry_id')) ? $TMPL->fetch_param('entry_id') : $TMPL->tagdata;
 		$this->channel_id = $this->get_channel_id_from_param($this->entry_id);
+
+		$this->image_size = ($TMPL->fetch_param('image_size')) ? $TMPL->fetch_param('image_size') : 'medium';
 
 		$slider_ul_id = ($TMPL->fetch_param('slider_ul_id')) ? $TMPL->fetch_param('slider_ul_id') : NULL;
 		$slider_ul_class = ($TMPL->fetch_param('slider_ul_class')) ? $TMPL->fetch_param('slider_ul_class') : NULL;
@@ -118,7 +121,7 @@ class Bol_wygwam_media
 		$replace = '<div'.$container_id.$container_class.'>';
 		$replace .= '<ul style="list-style-type:none;"'.$ul_id.$ul_class.'>';
 		$replace .= '{exp:channel_images:images channel_id="'.$this->channel_id.'" dynamic="no" entry_id="'.$this->entry_id.'"}';
-		$replace .= '<li><img src="{image:url:medium}" width="{image:width:medium}" height="{image:height:medium}" title="{image:description}" alt="{image:description}" /></li>';
+		$replace .= '<li><img src="{image:url:'.$this->image_size.'}" width="{image:width:'.$this->image_size.'}" height="{image:height:'.$this->image_size.'}" title="{image:description}" alt="{image:description}" /></li>';
 		$replace .= "{/exp:channel_images:images}";
 		$replace .= "</ul></div>";
 		
@@ -137,37 +140,100 @@ class Bol_wygwam_media
 		ob_start();
 		?>
 
-	This plugin will automatically convert Wygwam tags to a gallery/slider or embedded youtube video.
+# BOL Wygwam Media
 
-	Bits Of Love - Wygwam Media
-	===========================
+  Converts pre-defined tags found in Wygwam content. This allows users to place a image-gallery / image-slider / youtube-video wherever they want throughout the text.
+  Its easily customizable by using the tag parameters.
+  
+    {exp:bol_wygwam_tags slider_container_id="myID" slider_ul_class="myClass"}
+        {content}
+    {/exp:bol_wygwam_tags}
+  
+  This outputs:
+  
+    <div id="myID">
+        <ul class="myClass">
+            <li><img src="" alt=""/></li>
+            <li><img src="" alt=""/></li>
+            ...
+        </ul>
+    </div>
 
-	Slider:
+## Wygwam Parameters
 
-		{slider}
+	{slider}
 
-	Gallery:
+	{gallery}
 
-		{gallery}
+	{youtube:LINK} (http://youtu.be/...)
 
-	YouTube:
+## Template tag Parameters
 
-		{youtube:LINK} ( http://youtu.be/T7gQrwnp550 )
+### image_size="medium"
+Set the image size (as defined in the Channel Images fieldtype)
 
+### slider_container_id=""
 
-	Simple Example
-	===========================
+Set the ID of the slider container.
 
-	{exp:bol_wygwam_media entry_id="{entry_id}"}
-		{content}
-	{/exp:bol_wygwam_media}
+### slider_container_class=""
 
-	OUTPUT:
-	<div>
-		<ul>
-			<li><img src=""/></li>
-		</ul>
-	</div>
+Set the CSS class of the slider container.
+
+### slider_ul_id=""
+
+Set the ID of the slider unordered-list.
+
+### slider_ul_class=""
+
+Set the CSS class of the slider unordered-list.
+
+### gallery_container_id=""
+
+Set the ID of the gallery container.
+
+### gallery_container_class=""
+
+Set the CSS class of the gallery container.
+
+### gallery_ul_id=""
+
+Set the ID of the gallery unordered-list.
+
+### gallery_ul_class=""
+
+Set the CSS class of the slider unordered-list.
+
+## Usage
+
+### Steps
+1.  Create eg. a news fieldgroup with a Channel Images fieldtype and a Wygwam fieldtype
+2.  Publish a news item and upload images to your Channel Images fieldtype
+3.  Add the pre-defined tag inside Wygwam fieldtype
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nulla vitae leo aliquam rhoncus. 
+        Suspendisse ac mauris turpis. Donec commodo lacus at eros luctus accumsan congue leo consectetur.
+        
+        {slider}
+        
+        Etiam mi leo, pretium a cursus vitae, faucibus sit amet elit. Praesent eu dolor non dui consequat vestibulum. 
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+        Vivamus sem odio, mattis in blandit vitae, dignissim nec elit.
+
+## Example using [Flex Slider](http://www.woothemes.com/flexslider)
+
+### Template Tag
+    {exp:bol_wygwam_tags slider_container_class="flexslider" slider_ul_class="slides"}
+        {content}
+    {/exp:bol_wygwam_tags}
+
+### Javascript
+    if($('.flexslider').length)
+    {
+  		$('.flexslider').wrap('<div class="flex-nav-container"></div>');
+  		$('.flexslider').flexslider({slideshowSpeed: 3000});
+  	}
+
 
 	
 	<?php

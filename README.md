@@ -27,6 +27,9 @@
 
 ## Template tag Parameters
 
+### image_size="medium"
+Set the image size (as defined in the Channel Images fieldtype)
+
 ### slider_container_id=""
 
 Set the ID of the slider container.
@@ -62,8 +65,8 @@ Set the CSS class of the slider unordered-list.
 ## Usage
 
 ### Steps
-1.  Create eg. a news fieldgroup with a ChannelImages fieldtype and a Wygwam fieldtype
-2.  Publish a news item and upload images to your 'ChannelImages' fieldtype
+1.  Create eg. a news fieldgroup with a Channel Images fieldtype and a Wygwam fieldtype
+2.  Publish a news item and upload images to your Channel Images fieldtype
 3.  Add the pre-defined tag inside Wygwam fieldtype
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nulla vitae leo aliquam rhoncus. 

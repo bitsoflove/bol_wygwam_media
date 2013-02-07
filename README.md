@@ -1,4 +1,4 @@
--BOL_Wygwam_Media
+BOL_Wygwam_Media
 =================
 
 Expression Plugin

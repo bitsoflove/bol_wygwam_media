@@ -85,6 +85,5 @@ Set the CSS class of the slider unordered-list.
     if($('.flexslider').length)
     {
   		$('.flexslider').wrap('<div class="flex-nav-container"></div>');
-  		$('.flexslider .slides > li').css('display','none');
   		$('.flexslider').flexslider({slideshowSpeed: 3000});
   	}

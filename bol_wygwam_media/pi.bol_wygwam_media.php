@@ -16,7 +16,7 @@ $plugin_info       = array(
 	'pi_version'     => '0.1',
 	'pi_author'      => 'Bits of Love',
 	'pi_author_url'  => 'http://www.bitsoflove.be',
-	'pi_description' => 'Automatically converts WYGWAM tags to a gallery/slider or embedded youtube video',
+	'pi_description' => 'Automatically converts Wygwam tags to a gallery/slider or embedded youtube video',
 	'pi_usage'       => Bol_wygwam_media::usage()
 );
 
@@ -137,9 +137,9 @@ class Bol_wygwam_media
 		ob_start();
 		?>
 
-	This plugin will automatically convert WYGWAM tags to a gallery/slider or embedded youtube video.
+	This plugin will automatically convert Wygwam tags to a gallery/slider or embedded youtube video.
 
-	Bits Of Love - WYGWAM Media
+	Bits Of Love - Wygwam Media
 	===========================
 
 	Slider:

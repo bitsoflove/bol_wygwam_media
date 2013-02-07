@@ -1,6 +1,6 @@
-# Bits of Love - Wygwam Media
+# BOL Wygwam Media
 
-  Converts pre-defined tags found in WYGWAM content. This allows users to place a image-gallery / image-slider / youtube-video wherever they want throughout the text.
+  Converts pre-defined tags found in Wygwam content. This allows users to place a image-gallery / image-slider / youtube-video wherever they want throughout the text.
   Its easily customizable by using the tag parameters.
   
     {exp:bol_wygwam_tags slider_container_id="myID" slider_ul_class="myClass"}
@@ -17,7 +17,7 @@
         </ul>
     </div>
 
-## WYGWAM Parameters
+## Wygwam Parameters
 
 	{slider}
 

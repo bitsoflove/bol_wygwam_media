@@ -62,8 +62,9 @@ Set the CSS class of the slider unordered-list.
 ## Usage
 
 ### Steps
-1.  Upload Images to 'Channel Images' fieldtype
-2.  Add the pre-defined tag inside the content
+1.  Create eg. a news fieldgroup with a ChannelImages fieldtype and a Wygwam fieldtype
+2.  Publish a news item and upload images to your 'ChannelImages' fieldtype
+3.  Add the pre-defined tag inside Wygwam fieldtype
 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nulla vitae leo aliquam rhoncus. 
         Suspendisse ac mauris turpis. Donec commodo lacus at eros luctus accumsan congue leo consectetur.
